@@ -430,6 +430,145 @@
         </div>
       </section>
 
+      <!-- BMI calculator starts  -->
+      <section class="pt-16 md:pt-24 max-w-full">
+        <div
+          class="flex flex-col justify-center items-start space-y-4 max-w-screen-md mx-auto px-3 lg:px-0"
+        >
+          <h2 class="font-black text-2xl md:text-4xl text-white">
+            BMI Calculator
+          </h2>
+          <p class="text-desc text-sm md:text-lg">
+            We believe fitness should be accessible to everyone, everywhere,
+            <br class="hidden md:block lg:hidden" />
+            regardless of income or access to a gym.
+          </p>
+        </div>
+
+        <div class="bg-bgSecondary md:mt-14 mt-10 px-3 lg:px-0">
+          <div class="max-w-screen-lg mx-auto">
+            <div
+              class="hero-content flex-col lg:flex-row p-0 justify-between items-start md:py-12 py-8"
+            >
+              <div class="md:space-y-12 space-y-4">
+                <h2 class="font-black md:text-2xl text-white self-start">
+                  BMI Calculator Chart
+                </h2>
+                <!-- table  -->
+                <table
+                  class="table border-collapse border-2 border-[#FFFFFF1A]"
+                >
+                  <!-- head -->
+                  <thead>
+                    <tr class="text-white text-base">
+                      <th>BMI</th>
+                      <th>Weight Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- row 1 -->
+                    <tr>
+                      <td>Below 18.5</td>
+                      <td>Underweight</td>
+                    </tr>
+
+                    <!-- row 2 -->
+                    <tr>
+                      <td>18.5 - 24.9</td>
+                      <td>Healthy</td>
+                    </tr>
+
+                    <!-- row 3 -->
+                    <tr>
+                      <td>25.0 - 29.9</td>
+                      <td>Overweight</td>
+                    </tr>
+
+                    <!-- row 4 -->
+                    <tr>
+                      <td>30.0 - and Above</td>
+                      <td>Obese</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="card w-full lg:max-w-lg shrink-0">
+                <div
+                  class="flex items-center flex-col justify-center space-y-4"
+                >
+                  <h2 class="font-black md:text-2xl text-white self-start">
+                    Calculate your BMI
+                  </h2>
+                  <p class="text-desc text-sm md:text-lg">
+                    We believe fitness should be accessible to everyone,
+                    everywhere, regardless of income or access to a gym.
+                  </p>
+                </div>
+                <form class="card-body p-0 mt-8">
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="form-control">
+                      <input
+                        type="text"
+                        placeholder="Height/cm"
+                        class="input input-bordered bg-[#FFFFFF1A] text-white"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-control">
+                      <input
+                        type="text"
+                        placeholder="Weight/kg"
+                        class="input input-bordered bg-[#FFFFFF1A] text-white"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="form-control">
+                      <input
+                        type="text"
+                        placeholder="Age"
+                        class="input input-bordered bg-[#FFFFFF1A] text-white"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-control">
+                      <select
+                        class="select w-full bg-[#FFFFFF1A] text-[#FFFFFF80]"
+                      >
+                        <option disabled selected>Sex</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-control">
+                    <select
+                      class="select w-full bg-[#FFFFFF1A] text-[#FFFFFF80]"
+                    >
+                      <option disabled selected>
+                        Select an activity factor
+                      </option>
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+                  <button
+                    class="btn bg-btnColor border-none rounded-full w-auto md:px-10 md:py-4 text-white lg:text-lg font-semibold content-center mt-3"
+                  >
+                    Calculate
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- team starts  -->
       <section class="md:py-24 px-3 py-16">
         <div class="flex items-center flex-col justify-center space-y-4">

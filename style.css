@@ -14,5 +14,16 @@ main > section {
   max-width: 1024px;
   margin: 0 auto;
 }
+tbody {
+  color: #ffffff80;
+}
+
+tbody td,
+thead th {
+  border: 2px solid #ffffff1a;
+}
+select option {
+  color: black;
+}
 
 /* bg-gradient-to-b from-[#111111] to-[#777777] */
