@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- font CND  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tailwind and DaisyUI CDN  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- custom CSS  -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Fitness</title>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              miama: ["Miama", "sans-serif"],
+            },
+            colors: {
+              btnColor: "#E6533C",
+              desc: "#FFFFFF80",
+              bgSecondary: "#222222",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <section class="bg-black">
+      <header>
+        <div class="max-w-screen-lg mx-auto">
+          <div class="navbar">
+            <!-- Logo -->
+            <div class="flex-1">
+              <a class="text-4xl text-btnColor font-bold">Fitness</a>
+            </div>
+            <!-- Desktop Menu -->
+            <div class="flex-none hidden lg:flex">
+              <ul
+                class="menu menu-horizontal p-0 text-white border border-[#FFFFFF1A] rounded-full space-x-5"
+              >
+                <li><a class="hover:bg-btnColor rounded-full">Home</a></li>
+                <li><a class="hover:bg-btnColor rounded-full">Service</a></li>
+                <li><a class="hover:bg-btnColor rounded-full">Contact</a></li>
+                <li><a class="hover:bg-btnColor rounded-full">About</a></li>
+              </ul>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button
+              onclick="toggleOffcanvas()"
+              class="btn btn-ghost lg:hidden"
+              aria-label="Open menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+                color="white"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Offcanvas Menu -->
+        <div
+          id="offcanvasMenu"
+          class="fixed top-0 left-0 h-full w-[75%] max-w-sm bg-[#222222] text-white shadow-lg transform -translate-x-full transition-transform duration-300 lg:hidden z-10"
+        >
+          <div
+            class="p-4 flex justify-between items-center border-b border-gray-700"
+          >
+            <span class="text-2xl font-bold">Menu</span>
+            <button
+              onclick="toggleOffcanvas()"
+              class="text-white"
+              aria-label="Close menu"
+            >
+              ✖
+            </button>
+          </div>
+          <ul class="menu p-4 space-y-4">
+            <li><a href="#" class="hover:bg-btnColor rounded-full">Home</a></li>
+            <li>
+              <a href="#" class="hover:bg-btnColor rounded-full">Service</a>
+            </li>
+            <li>
+              <a href="#" class="hover:bg-btnColor rounded-full">Contact</a>
+            </li>
+            <li>
+              <a href="#" class="hover:bg-btnColor rounded-full">About</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Backdrop -->
+        <div
+          id="offcanvasBackdrop"
+          class="fixed inset-0 bg-black bg-opacity-50 hidden"
+          onclick="toggleOffcanvas()"
+        ></div>
+      </header>
+
+      <!-- banner starts  -->
+      <section class="max-w-screen-lg mx-auto">
+        <div class="hero place-items-stretch">
+          <div
+            class="hero-content flex-col-reverse lg:flex-row-reverse justify-between"
+          >
+            <div class="relative">
+              <img
+                src="/images/Images 2.png"
+                class="md:max-w-sm rounded-lg shadow-2xl"
+              />
+              <div
+                class="card bg-[#FFFFFF1A] md:w-52 shadow-xl absolute top-12 left-40 md:top-28 lg:left-56"
+              >
+                <div class="p-3 md:p-5">
+                  <h2 class="card-title font-extrabold md:text-4xl text-white">
+                    500+
+                  </h2>
+                  <p class="text-[#FFFFFFA6] text-[10px] md:text-base">
+                    Free Workout Videos
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="card bg-[#3030308A] md:w-52 shadow-xl absolute md:bottom-12 md:-left-24 left-0 bottom-48"
+              >
+                <div class="p-3 md:p-5 flex items-center gap-3">
+                  <div class="w-8 h-8 bg-btnColor rounded-full"></div>
+                  <div>
+                    <h2
+                      class="card-title font-extrabold text-lg md:text-2xl text-white"
+                    >
+                      350+
+                    </h2>
+                    <p class="text-[#FFFFFFA6] text-[10px] md:text-base">
+                      Video tutorial
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h1 class="text-4xl lg:text-7xl font-extrabold text-white">
+                Get body in <br />
+                <span class="font-miama font-normal">shape</span> & stay <br />
+                healthy
+              </h1>
+              <p class="py-6 text-desc">
+                A huge selection of health and fitness content, healthy recipes
+                <br class="hidden md:block" />
+                and transformation stories to help you get fit and stay fit!
+              </p>
+              <div class="space-x-2">
+                <button
+                  class="btn bg-btnColor border-none rounded-full md:px-10 md:py-4 text-white lg:text-lg font-semibold content-center"
+                >
+                  Join Club Now!
+                </button>
+                <button
+                  class="btn bg-transparent border rounded-full md:px-10 md:py-4 text-white lg:text-lg font-semibold content-center"
+                >
+                  Download App
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <main>
+      <!-- habits starts  -->
+      <section class="md:pt-24 px-3">
+        <div class="flex items-center flex-col justify-center space-y-4">
+          <h2 class="font-black text-2xl md:text-4xl text-white">
+            Change Your Habits
+          </h2>
+          <p class="text-center text-desc text-sm md:text-lg">
+            We believe fitness should be accessible to everyone, everywhere,
+            <br class="hidden md:block lg:hidden" />
+            regardless of income or <br class="hidden lg:block" />
+            access to a gym.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-14 gap-8">
+          <!-- habit-1 -->
+          <div class="justify-items-center space-y-3">
+            <img
+              src="./images/image 3.png"
+              alt=""
+              class="rounded-full border"
+            />
+            <div class="text-center">
+              <h4 class="text-lg text-white">Movement</h4>
+              <p class="text-desc">
+                We believe fitness should be <br />
+                accessible to everyone
+              </p>
+            </div>
+          </div>
+
+          <!-- habit-2 -->
+          <div class="justify-items-center space-y-3">
+            <img
+              src="./images/image 2.png"
+              alt=""
+              class="rounded-full border"
+            />
+            <div class="text-center">
+              <h4 class="text-lg text-white">Time</h4>
+              <p class="text-desc">
+                We believe fitness should be <br />
+                accessible to everyone
+              </p>
+            </div>
+          </div>
+
+          <!-- habit-3 -->
+          <div class="justify-items-center space-y-3">
+            <img
+              src="./images/image 4.png"
+              alt=""
+              class="rounded-full border"
+            />
+            <div class="text-center">
+              <h4 class="text-lg text-white">Practice</h4>
+              <p class="text-desc">
+                We believe fitness should be <br />
+                accessible to everyone
+              </p>
+            </div>
+          </div>
+
+          <!-- habit-4 -->
+          <div class="justify-items-center space-y-3">
+            <img
+              src="./images/image 5.png"
+              alt=""
+              class="rounded-full border"
+            />
+            <div class="text-center">
+              <h4 class="text-lg text-white">Weight Loss</h4>
+              <p class="text-desc">
+                We believe fitness should be <br />
+                accessible to everyone
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- extra miles  -->
+      <section class="md:pt-24 px-3 pt-16">
+        <div class="hero bg-bgSecondary rounded-2xl">
+          <div
+            class="hero-content flex-col-reverse md:flex-row-reverse justify-between lg:px-0 px-8 py-8 lg:gap-24"
+          >
+            <img
+              src="/images/run.jpg"
+              class="lg:max-w-sm md:max-w-56 rounded-lg shadow-2xl md:h-[319px]"
+            />
+            <div>
+              <h1 class="font-black text-2xl md:text-5xl text-white">
+                Run an Extra <br />
+                Mile Easily
+              </h1>
+              <p class="py-4 text-desc">
+                We believe fitness should be accessible to everyone,
+                <br class="hidden lg:block" />
+                everywhere, regardless of income or access to a gym. With
+                <br class="hidden lg:block" />
+                hundreds of professional workouts.
+              </p>
+              <button
+                class="btn bg-btnColor border-none rounded-full w-full md:w-auto md:px-10 md:py-4 text-white lg:text-lg font-semibold content-center"
+              >
+                Join Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- training starts  -->
+      <section class="md:pt-24 px-3 pt-16">
+        <div class="flex flex-col space-y-4">
+          <h2 class="font-black text-2xl md:text-4xl text-white">
+            Trainings and Exercises
+          </h2>
+          <p class="text-desc text-sm md:text-lg">
+            We believe fitness should be accessible to everyone, everywhere,
+            <br class="hidden md:block lg:hidden" />
+            regardless of income or <br class="hidden lg:block" />
+            access to a gym.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-12 md:mt-14 mt-10">
+          <div class="md:col-span-3 col-span-6">
+            <div
+              class="relative bg-cover bg-center md:h-[200px] h-32"
+              style="
+                background-image: url(/images/exercise1.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+              "
+            >
+              <div class="absolute inset-0 bg-[#06FFD280]"></div>
+              <div class="absolute bottom-4 left-4 text-white font-semibold">
+                <h3 class="text-xs lg:text-sm text-black">Leg Press Workout</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-6 col-span-6">
+            <div
+              class="relative bg-cover bg-center md:h-[200px] h-32"
+              style="
+                background-image: url(/images/exercise2.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+              "
+            >
+              <div class="absolute inset-0 bg-[#FF00004D]"></div>
+              <div class="absolute top-5 left-4 text-white font-semibold">
+                <h3 class="text-xs lg:text-sm">Push-Up Exercise</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-3 hidden md:block">
+            <div
+              class="relative bg-cover bg-center md:h-[200px] h-32"
+              style="
+                background-image: url(/images/exercise3.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+              "
+            >
+              <div class="absolute inset-0 bg-[#00000080]"></div>
+              <div class="absolute bottom-4 left-4 text-white font-semibold">
+                <h3 class="text-xs lg:text-sm">Strength Training</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 col-span-6">
+            <div
+              class="relative bg-cover bg-center md:h-[200px] h-32"
+              style="
+                background-image: url(/images/exercise4.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+              "
+            >
+              <div class="absolute inset-0 bg-[#00000080]"></div>
+              <div
+                class="absolute bottom-4 left-4 md:top-5 md:left-56 text-white font-semibold"
+              >
+                <h3 class="text-xs lg:text-sm">Core Stability</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-3 col-span-6">
+            <div
+              class="relative bg-cover bg-center md:h-[200px] h-32"
+              style="
+                background-image: url(/images/exercise5.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+              "
+            >
+              <div class="absolute inset-0 bg-[#42FF004D]"></div>
+              <div class="absolute bottom-4 left-4 text-white font-semibold">
+                <h3 class="text-xs lg:text-sm">Full-Body Stretch</h3>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-4 hidden md:block">
+            <div
+              class="relative bg-cover bg-center md:h-[200px] h-32"
+              style="
+                background-image: url(/images/exercise6.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+              "
+            >
+              <div class="absolute inset-0 bg-[#0047FF4D]"></div>
+              <div class="absolute bottom-4 left-4 text-white font-semibold">
+                <h3 class="text-xs lg:text-sm">Cardio Warm-Up</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- team starts  -->
+      <section class="md:py-24 px-3 py-16">
+        <div class="flex items-center flex-col justify-center space-y-4">
+          <h2 class="font-black text-2xl md:text-4xl text-white">
+            Meet Our Team
+          </h2>
+          <p class="text-center text-desc text-sm md:text-lg">
+            We believe fitness should be accessible to everyone, everywhere,
+            <br class="hidden md:block lg:hidden" />
+            regardless of income or <br class="hidden lg:block" />
+            access to a gym.
+          </p>
+        </div>
+
+        <div class="hero bg-bgSecondary rounded-2xl p-5 md:mt-14 mt-10">
+          <div class="grid md:grid-cols-3 gap-5">
+            <div class="hidden md:block">
+              <img
+                src="./images/trainer1.png"
+                alt=""
+                class="w-full h-full rounded-2xl"
+              />
+              <div class="-mt-16 ml-5">
+                <h5 class="text-white font-semibold text-lg">Jerome bell</h5>
+                <p class="text-desc">Trainer</p>
+              </div>
+            </div>
+
+            <div>
+              <img
+                src="./images/trainer2.png"
+                alt=""
+                class="w-full h-full rounded-2xl"
+              />
+              <div class="-mt-16 ml-5">
+                <h5 class="text-white font-semibold text-lg">Jerome bell</h5>
+                <p class="text-desc">Trainer</p>
+              </div>
+            </div>
+
+            <div>
+              <img
+                src="./images/trainer3.png"
+                alt=""
+                class="w-full h-full rounded-2xl"
+              />
+              <div class="-mt-16 ml-5">
+                <h5 class="text-white font-semibold text-lg">Jerome bell</h5>
+                <p class="text-desc">Trainer</p>
+              </div>
+            </div>
+
+            <div class="hidden md:block">
+              <img
+                src="./images/trainer4.png"
+                alt=""
+                class="w-full h-full rounded-2xl"
+              />
+              <div class="-mt-16 ml-5">
+                <h5 class="text-white font-semibold text-lg">Jerome bell</h5>
+                <p class="text-desc">Trainer</p>
+              </div>
+            </div>
+
+            <div>
+              <img
+                src="./images/trainer5.png"
+                alt=""
+                class="w-full h-full rounded-2xl"
+              />
+              <div class="-mt-16 ml-5">
+                <h5 class="text-white font-semibold text-lg">Jerome bell</h5>
+                <p class="text-desc">Trainer</p>
+              </div>
+            </div>
+
+            <div>
+              <img
+                src="./images/trainer6.png"
+                alt=""
+                class="w-full h-full rounded-2xl"
+              />
+              <div class="-mt-16 ml-5">
+                <h5 class="text-white font-semibold text-lg">Jerome bell</h5>
+                <p class="text-desc">Trainer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-bgSecondary">
+      <div class="footer max-w-screen-lg mx-auto text-base-content p-10">
+        <aside>
+          <a class="text-3xl md:text-5xl text-btnColor font-bold">Fitness</a>
+          <p class="py-4 text-desc">
+            We believe fitness should be accessible to everyone,
+            <br class="hidden lg:block" />
+            everywhere, regardless of income or access to a gym. With
+            <br class="hidden lg:block" />
+            hundreds of professional workouts.
+          </p>
+        </aside>
+        <nav class="text-desc">
+          <h6 class="font-bold text-lg md:text-2xl text-white">Get Started</h6>
+          <a class="link link-hover">Service</a>
+          <a class="link link-hover">Contact Us</a>
+          <a class="link link-hover">Affiliate Program</a>
+          <a class="link link-hover">About Us</a>
+        </nav>
+
+        <nav class="text-desc">
+          <h6 class="font-bold text-lg md:text-2xl text-white">Get Started</h6>
+          <a class="link link-hover">Fitness</a>
+          <a class="link link-hover">Platform</a>
+          <a class="link link-hover">Workout Libary</a>
+          <a class="link link-hover">App Design</a>
+        </nav>
+      </div>
+
+      <div class="border border-[#FFFFFF1A]"></div>
+      <p class="text-center text-[#FFFFFF80] py-6">
+        All right reserved @Fitness 2024
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

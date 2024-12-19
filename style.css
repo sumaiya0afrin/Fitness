@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Miama";
+  src: url("/fonts/Miama.ttf");
+}
+
+body {
+  font-family: "Inter", serif;
+}
+
+main {
+  background-color: black;
+}
+main > section {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* bg-gradient-to-b from-[#111111] to-[#777777] */
