@@ -11,3 +11,32 @@ function toggleOffcanvas() {
     backdrop.classList.add("hidden");
   }
 }
+
+document.getElementById("calculateBMI").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const height = document.getElementById("height").value;
+  const weight = document.getElementById("weight").value;
+
+  const heightInMeter = height / 100;
+
+  const bmi = weight / Math.pow(heightInMeter, 2);
+
+  if (bmi < 18.5) {
+    category = "Underweight";
+  } else if (bmi >= 18.5 && bmi < 24.9) {
+    category = "Healthy";
+  } else if (bmi >= 25 && bmi < 29.9) {
+    category = "Overweight";
+  } else {
+    category = "Obese";
+  }
+
+  const myBMI = document.getElementById("my-bmi");
+  myBMI.classList.add("text-[#E6533C]", "md:text-base", "text-xs");
+  myBMI.innerText = `Your BMI is ${bmi.toFixed(
+    2
+  )} and Weight Status is ${category}`;
+
+  console.log(bmi.toFixed(2), category);
+});
