@@ -43,6 +43,14 @@ The **Fitness** website is a responsive platform designed to help users achieve 
 - JavaScript: For interactive elements.
 - Daisy UI and Tailwind CSS: For styling components.
 
+## Deployment
+
+The website is deployed to vercel and accessible online. Visit Fitness Website to explore the platform.
+
+```bash
+  https://fitness-dusky-phi.vercel.app/
+```
+
 # Designs
 
 <img src="https://i.postimg.cc/wBTKcC7d/fitness.png"/>
