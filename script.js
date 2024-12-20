@@ -34,9 +34,14 @@ document.getElementById("calculateBMI").addEventListener("click", function (e) {
 
   const myBMI = document.getElementById("my-bmi");
   myBMI.classList.add("text-[#E6533C]", "md:text-base", "text-xs");
-  myBMI.innerText = `Your BMI is ${bmi.toFixed(
-    2
-  )} and Weight Status is ${category}`;
+
+  if (bmi) {
+    myBMI.innerText = `Your BMI is ${bmi.toFixed(
+      2
+    )} and Weight Status is ${category}`;
+  } else {
+    myBMI.innerText = "Fill up the fields first";
+  }
 
   console.log(bmi.toFixed(2), category);
 });
